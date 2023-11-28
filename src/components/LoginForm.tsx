@@ -1,6 +1,4 @@
-import { Content } from "antd/es/layout/layout";
-import Title from "antd/es/typography/Title";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 
 const LoginForm = () => {

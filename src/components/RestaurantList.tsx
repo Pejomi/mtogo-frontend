@@ -1,7 +1,5 @@
-import { Button, Checkbox, Form, Input, List, Typography } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { Button, List } from "antd";
 import Title from "antd/es/typography/Title";
-
 
 const RestaurantList = () => {
     // DUMMY DATA
@@ -30,6 +28,7 @@ const RestaurantList = () => {
     ];
     return (
         <List
+            header={<Title style={{ textAlign: "right" }} level={5}>Total ({data.length})</Title>}
             size="small"
             pagination={{ align: "center", position: "bottom" }}
             dataSource={data}

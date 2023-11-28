@@ -1,7 +1,5 @@
-import { AppstoreOutlined, EditOutlined, HomeOutlined, MailOutlined, SettingOutlined, ShopOutlined, UserOutlined } from '@ant-design/icons';
-import { Avatar, Col, Menu, Row, type MenuProps } from 'antd';
-import Home from '../pages/Home';
-import { useState } from 'react';
+import { HomeOutlined, ShopOutlined, UserOutlined } from '@ant-design/icons';
+import { Avatar, Col, Menu, Row } from 'antd';
 import { Header } from 'antd/es/layout/layout';
 import { Link } from 'react-router-dom';
 

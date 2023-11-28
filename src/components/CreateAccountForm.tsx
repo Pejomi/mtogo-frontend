@@ -1,5 +1,4 @@
 import { Button, Form, Input } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
 
 const CreateAccountForm = () => {
     const onFinish = (values: any) => {

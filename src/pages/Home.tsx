@@ -1,4 +1,3 @@
-import { Content } from "antd/es/layout/layout";
 import NavigationBar from "../components/Navigationbar";
 import Title from "antd/es/typography/Title";
 import { Button } from "antd";

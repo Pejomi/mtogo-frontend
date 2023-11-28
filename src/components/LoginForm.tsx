@@ -17,13 +17,13 @@ const LoginForm = () => {
         >
             <Form.Item
                 name="username"
-                rules={[{ required: true, message: 'Please input your Username!' }]}
+                rules={[{ required: true, message: 'Please input your username!' }]}
             >
                 <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
             </Form.Item>
             <Form.Item
                 name="password"
-                rules={[{ required: true, message: 'Please input your Password!' }]}
+                rules={[{ required: true, message: 'Please input your password!' }]}
             >
                 <Input
                     prefix={<LockOutlined className="site-form-item-icon" />}
@@ -32,12 +32,12 @@ const LoginForm = () => {
                 />
             </Form.Item>
 
-            <Form.Item>
+            <Form.Item style={{ textAlign: "center" }}>
                 <Button type="primary" htmlType="submit" className="login-form-button">
                     Log in
                 </Button>
 
-                <span style={{ paddingLeft: "10px" }}>Or <a href="">register now!</a></span>
+                <span style={{ paddingLeft: "10px" }}>Or <a href="/create_account">register now!</a></span>
             </Form.Item>
         </Form>
     )

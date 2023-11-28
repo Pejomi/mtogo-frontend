@@ -22,7 +22,7 @@ const NavigationBar = () => {
         },
     ];
 
-    const [current, setCurrent] = useState('mail');
+    const [current, setCurrent] = useState('1');
 
     const onClick: MenuProps['onClick'] = (e) => {
         console.log('click ', e);
@@ -48,6 +48,10 @@ const NavigationBar = () => {
                             <Menu.Item key="2" icon={<ShopOutlined />}>
                                 Restaurants
                                 <Link to="/restaurants" />
+                            </Menu.Item>
+                            <Menu.Item key="3">
+                                Login
+                                <Link to="/login" />
                             </Menu.Item>
                         </Menu>
                     </Col>

@@ -6,34 +6,8 @@ import { Header } from 'antd/es/layout/layout';
 import { Link } from 'react-router-dom';
 
 const NavigationBar = () => {
-    const items: MenuProps['items'] = [
-        {
-            label: 'Restaurants',
-            key: 'restaurants',
-            icon: <ShopOutlined />,
-        },
-        {
-            label: (
-                <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                    Navigation Four - Link
-                </a>
-            ),
-            key: 'alipay',
-        },
-    ];
-
-    const [current, setCurrent] = useState('1');
-
-    const onClick: MenuProps['onClick'] = (e) => {
-        console.log('click ', e);
-        setCurrent(e.key);
-    };
-
     return (
         <>
-
-            {/* <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
-             */}
             <Header style={{ background: 'white' }}>
                 <Row justify="space-between">
                     <Col flex="20px" style={{ marginRight: "30px" }}>

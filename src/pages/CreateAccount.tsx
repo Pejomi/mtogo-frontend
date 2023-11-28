@@ -7,9 +7,7 @@ import RegisterForm from "../components/CreateAccountForm";
 const CreateAccount = () => {
     return (
         <>
-            <NavigationBar />
-
-            <div style={{ padding: 24, minHeight: 380 }}>
+            <div style={{ padding: 24 }}>
                 <Title level={2} style={{ textAlign: "center" }}>Create Account</Title>
                 <br />
                 <Flex justify="center" align="flex-start">

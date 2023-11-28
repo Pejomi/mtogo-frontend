@@ -1,4 +1,3 @@
-import NavigationBar from "../components/Navigationbar";
 import Title from "antd/es/typography/Title";
 import { Col, Flex } from "antd";
 import LoginForm from "../components/LoginForm";
@@ -6,9 +5,7 @@ import LoginForm from "../components/LoginForm";
 const Login = () => {
     return (
         <>
-            <NavigationBar />
-
-            <div style={{ padding: 24, minHeight: 380 }}>
+            <div style={{ padding: 24 }}>
                 <Title level={2} style={{ textAlign: "center" }}>Login</Title>
                 <br />
                 <Flex justify="center" align="flex-start">

@@ -24,8 +24,8 @@ const RestaurantList = () => {
         { id: 18, name: 'Japanese princess to wed commoner.' },
         { id: 19, name: 'Racing car sprays burning fuel into crowd.' },
         { id: 20, name: 'Japanese princess to wed commoner.' },
-
     ];
+
     return (
         <List
             header={<Title style={{ textAlign: "right" }} level={5}>Total ({data.length})</Title>}
@@ -35,7 +35,7 @@ const RestaurantList = () => {
             renderItem={(item) => (
                 <List.Item key={item.id}>
                     <List.Item.Meta
-                        title={<Title level={4}>{item.name}</Title>}
+                        title={<div style={{ fontSize: "16px" }}>{item.name}</div>}
                         description={item.name}
                     />
                     <div><Button type="primary">See more</Button></div>

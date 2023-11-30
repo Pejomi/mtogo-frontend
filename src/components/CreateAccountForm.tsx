@@ -1,9 +1,54 @@
 import { Button, Form, Input } from "antd";
+import axios, { AxiosError } from "axios";
+import { useNavigate } from "react-router-dom";
 
-const CreateAccountForm = () => {
-    const onFinish = (values: any) => {
-        console.log('Received values of form: ', values);
+interface CreateAccountFormProps {
+    setUser: (user: User) => void;
+}
+
+const CreateAccountForm: React.FC<CreateAccountFormProps> = ({ setUser }) => {
+    const navigate = useNavigate();
+    async function fetchRegistration(params: RegisterRequest) {
+        try {
+            const response = await axios.post("http://localhost:8082/api/auth/register/consumer", params);
+            const data = response.data;
+            return data;
+        } catch (error: any) {
+            throw error;
+        }
+    }
+
+    async function fetchLogin(params: UserRequest) {
+        try {
+            const response = await axios.post("http://localhost:8082/api/auth/login", params);
+            const data = response.data;
+            return data;
+        } catch (error: any) {
+            throw error;
+        }
+    }
+
+    const onFinish = (values: RegisterRequest) => {
+        console.log(values);
+        fetchRegistration(values)
+            .then((data: string) => {
+                console.log("Received data:", data);
+                fetchLogin({ email: values.email, password: values.password })
+                    .then((data: AuthResponse) => {
+                        console.log("Received data:", data);
+                        setUser({ email: values.email, token: data.accessToken });
+                        navigate("/");
+                    })
+                    .catch((error: AxiosError) => {
+                        console.error("Error occurred:", error);
+                    });
+            })
+            .catch((error: AxiosError) => {
+                console.error("Error occurred:", error);
+            });
     };
+
+
     const formItemLayout = {
         labelCol: {
             xs: { span: 24 },
@@ -43,7 +88,7 @@ const CreateAccountForm = () => {
                 label="Password"
                 rules={[{ required: true, message: 'Please input your password!' }]}
             >
-                <Input />
+                <Input type="password" />
             </Form.Item>
             <Form.Item
                 name="phone"
@@ -52,7 +97,6 @@ const CreateAccountForm = () => {
             >
                 <Input />
             </Form.Item>
-
             <Form.Item
                 name="street"
                 label="Street"

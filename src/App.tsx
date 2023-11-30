@@ -1,13 +1,20 @@
-import './assets/styles/App.css';
-import { Link } from 'react-router-dom';
 import AppRouter from './routes/AppRouter';
-import NavigationBar from './components/Navigationbar';
+import NavigationBar from './components/NavigationBar';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [user, setUser] = useState<User | null>(
+    (localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')!) : null);
+
+  useEffect(() => {
+    localStorage.setItem('user', JSON.stringify(user));
+  }, [setUser, user]);
+
   return (
     <>
-      <NavigationBar />
-      <AppRouter />
+      <NavigationBar user={user} />
+      <AppRouter user={user} setUser={setUser} />
     </>
   );
 }

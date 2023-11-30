@@ -1,10 +1,12 @@
-import { Content } from "antd/es/layout/layout";
-import NavigationBar from "../components/Navigationbar";
 import Title from "antd/es/typography/Title";
 import { Col, Flex } from "antd";
-import RegisterForm from "../components/CreateAccountForm";
+import CreateAccountForm from "../components/CreateAccountForm";
 
-const CreateAccount = () => {
+interface CreateAccountProps {
+    setUser: (user: User) => void;
+}
+
+const CreateAccount: React.FC<CreateAccountProps> = ({ setUser }) => {
     return (
         <>
             <div style={{ padding: 24 }}>
@@ -12,7 +14,7 @@ const CreateAccount = () => {
                 <br />
                 <Flex justify="center" align="flex-start">
                     <Col style={{ width: "100%", maxWidth: "400px" }}>
-                        <RegisterForm />
+                        <CreateAccountForm setUser={setUser} />
                     </Col>
                 </Flex>
             </div>

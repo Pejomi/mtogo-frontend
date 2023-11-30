@@ -27,16 +27,20 @@ declare global {
     }
 
     type MenuItem = {
-        id: number,
+        id: string,
         name: string,
-        description: string,
+        restaurantId: string,
         price: number
     }
 
     type Restaurant = {
-        id: number,
+        id: string,
         name: string,
         menus: MenuItem[]
+    }
+
+    type Cart = {
+        items: MenuItem[],
     }
 }
 

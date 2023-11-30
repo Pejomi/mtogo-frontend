@@ -1,45 +1,45 @@
-import { List } from "antd";
+import { Button, List } from "antd";
 import Title from "antd/es/typography/Title";
+import { Link } from "react-router-dom";
 
-const MenuList = () => {
-    // DUMMY DATA
-    const data = [
-        { id: 1, name: 'Racing car sprays burning fuel into crowd.' },
-        { id: 2, name: 'Japanese princess to wed commoner.' },
-        { id: 3, name: 'Racing car sprays burning fuel into crowd.' },
-        { id: 4, name: 'Japanese princess to wed commoner.' },
-        { id: 5, name: 'Racing car sprays burning fuel into crowd.' },
-        { id: 6, name: 'Japanese princess to wed commoner.' },
-        { id: 7, name: 'Racing car sprays burning fuel into crowd.' },
-        { id: 8, name: 'Japanese princess to wed commoner.' },
-        { id: 9, name: 'Racing car sprays burning fuel into crowd.' },
-        { id: 10, name: 'Japanese princess to wed commoner.' },
-        { id: 11, name: 'Racing car sprays burning fuel into crowd.' },
-        { id: 12, name: 'Japanese princess to wed commoner.' },
-        { id: 13, name: 'Racing car sprays burning fuel into crowd.' },
-        { id: 14, name: 'Japanese princess to wed commoner.' },
-        { id: 15, name: 'Racing car sprays burning fuel into crowd.' },
-        { id: 16, name: 'Japanese princess to wed commoner.' },
-        { id: 17, name: 'Racing car sprays burning fuel into crowd.' },
-        { id: 18, name: 'Japanese princess to wed commoner.' },
-        { id: 19, name: 'Racing car sprays burning fuel into crowd.' },
-        { id: 20, name: 'Japanese princess to wed commoner.' },
+interface MenuListProps {
+    data: MenuItem[];
+    cart: Cart | null;
+    setCart: (cart: Cart) => void;
+}
 
-    ];
+const MenuList: React.FC<MenuListProps> = ({ data, cart, setCart }) => {
     return (
         <List
-            header={<Title style={{ textAlign: "right" }} level={5}>Menus ({data.length})</Title>}
+            header={<Title style={{ textAlign: "right" }} level={5}>Menu items ({data.length})</Title>}
             size="small"
             pagination={{ align: "center", position: "bottom" }}
             dataSource={data}
-            renderItem={(item) => (
+            renderItem={(item: MenuItem) => (
                 <List.Item key={item.id}>
                     <List.Item.Meta
-                        title={<Title level={4}>{"[item name]"}</Title>}
-                        description={"[item description]"}
+                        title={<div style={{ fontSize: "16px" }}>{item.name}</div>}
+                        description={`Price: ${item.price} kr.`}
                     />
-                    <div>[Price]</div>
-                </List.Item>
+                    <Button
+                        name="add-to-cart-button"
+                        type="primary"
+                        style={{ background: "#00c936" }}
+                        onClick={() => {
+                            setCart(
+                                cart ?
+                                    {
+                                        items: [...cart.items, item]
+                                    } :
+                                    {
+                                        items: [item]
+                                    }
+                            );
+                        }}
+                    >
+                        Add to cart
+                    </Button>
+                </List.Item >
             )}
         />
     )

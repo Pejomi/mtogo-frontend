@@ -1,4 +1,4 @@
-import { HomeOutlined, ShopOutlined, UserOutlined } from '@ant-design/icons';
+import { HomeOutlined, ShopOutlined, ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Avatar, Button, Col, Dropdown, Menu, Row } from 'antd';
 import { Header } from 'antd/es/layout/layout';
@@ -8,9 +8,10 @@ import React from 'react';
 
 interface NavigationBarProps {
     user: User | null;
+    cart: Cart | null;
 }
 
-const NavigationBar: React.FC<NavigationBarProps> = ({ user }) => {
+const NavigationBar: React.FC<NavigationBarProps> = ({ user, cart }) => {
     const items: MenuProps['items'] = [
         {
             key: '1',
@@ -38,10 +39,17 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ user }) => {
                             </Menu.Item>
                             {
                                 user &&
-                                <Menu.Item key="2" icon={<ShopOutlined />}>
-                                    Restaurants
-                                    <Link to="/restaurants" />
-                                </Menu.Item>
+                                <>
+                                    <Menu.Item key="2" icon={<ShopOutlined />}>
+                                        Restaurants
+                                        <Link to="/restaurants" />
+                                    </Menu.Item>
+                                    <Menu.Item key="3" icon={<ShoppingCartOutlined />}>
+                                        <>
+                                            Cart (<span id="cart-size">{cart?.items.length ? cart.items.length : 0}</span>)
+                                        </>
+                                    </Menu.Item>
+                                </>
                             }
                         </Menu>
                     </Col>
@@ -55,7 +63,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ user }) => {
                                     <Col>
                                         <Dropdown menu={{ items }} arrow
                                             placement="bottomRight">
-                                            <Button style={{ color: "#4592ff" }} type="link" id='useremail'>{user.email}</Button>
+                                            <Button style={{ color: "#4592ff" }} type="link" id='user-email'>{user.email}</Button>
                                         </Dropdown>
                                     </Col>
                                 </>

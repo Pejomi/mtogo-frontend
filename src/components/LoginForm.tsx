@@ -57,7 +57,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ setUser }) => {
                 />
             </Form.Item>
             <Form.Item style={{ textAlign: "center" }}>
-                <Button id="loginsubmit" type="primary" htmlType="submit" className="login-form-button" name="login">
+                <Button id="submit-login" type="primary" htmlType="submit" className="login-form-button" name="login">
                     Log in
                 </Button>
                 <span style={{ paddingLeft: "10px" }}>Or <a href="/create_account">register now!</a></span>

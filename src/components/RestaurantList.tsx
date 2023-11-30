@@ -95,23 +95,31 @@ const RestaurantList = () => {
      }, [id]); */
 
     return (
-        <List
-            header={<Title style={{ textAlign: "right" }} level={5}>Total ({restaurants.length})</Title>}
-            size="small"
-            pagination={{ align: "center", position: "bottom" }}
-            dataSource={restaurants}
-            renderItem={(item: Restaurant) => (
-                <List.Item key={item.id}>
-                    <List.Item.Meta
-                        title={<div style={{ fontSize: "16px" }}>{item.name}</div>}
-                        description={item.menus.length > 0 ? `Menu items: ${item.menus.length}` : "No menu items"}
-                    />
-                    <Link to={`/restaurants/${item.id}`}>
-                        <Button type="primary">See more</Button>
-                    </Link>
-                </List.Item>
-            )}
-        />
+        <>
+            {restaurants.length > 0 ?
+                <List
+                    id="restaurant-list"
+                    header={<Title style={{ textAlign: "right" }} level={5}>Total ({restaurants.length})</Title>}
+                    size="small"
+                    pagination={{ align: "center", position: "bottom" }}
+                    dataSource={restaurants}
+                    renderItem={(item: Restaurant) => (
+                        <List.Item key={item.id}>
+                            <List.Item.Meta
+                                title={<div style={{ fontSize: "16px" }}>{item.name}</div>}
+                                description={item.menus.length > 0 ? `Menu items: ${item.menus.length}` : "No menu items"}
+                            />
+                            <Link to={`/restaurants/${item.id}`}>
+                                <Button type="primary">See more</Button>
+                            </Link>
+                        </List.Item>
+                    )}
+                />
+                :
+                <Title style={{ textAlign: "center" }} level={3}>No restaurants found</Title>
+            }
+        </>
+
     )
 }
 

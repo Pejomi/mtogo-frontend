@@ -1,5 +1,5 @@
 import AppRouter from './routes/AppRouter';
-import NavigationBar from './components/NavigationBar';
+import NavigationBar from './components/Navigationbar';
 import { useEffect, useState } from 'react';
 
 function App() {

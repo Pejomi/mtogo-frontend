@@ -112,7 +112,7 @@ const CreateAccountForm: React.FC<CreateAccountFormProps> = ({ setUser }) => {
                 <Input />
             </Form.Item>
             <Form.Item
-                name="zipcode"
+                name="zipCode"
                 label="Zipcode"
                 rules={[{ required: true, message: 'Please input your zipcode!' }]}
             >

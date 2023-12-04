@@ -42,6 +42,20 @@ declare global {
     type Cart = {
         items: MenuItem[],
     }
+
+    type OrderItem = {
+        menuItemId: string,
+        price: number,
+        quantity: number
+    }
+
+    type OrderRequest = {
+        consumerId: string,
+        restaurantId: string,
+        orderState: string,
+        price: number,
+        orderItems: OrderItem[]
+    }
 }
 
 export {

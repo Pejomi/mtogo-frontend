@@ -8,6 +8,7 @@ import React from "react";
 import RequireAuth from "./RequireAuth";
 import Logout from "../pages/Logout";
 import Restaurant from "../pages/Restaurant";
+import Cart from "../pages/Cart";
 
 interface AppRouterProps {
     user: User | null;
@@ -22,7 +23,7 @@ const AppRouter: React.FC<AppRouterProps> = ({ user, setUser, cart, setCart }) =
             <Route path='/' element={<Home />} />
             <Route path='/error' element={<Error />} />
             <Route path='/login' element={<Login setUser={setUser} />} />
-            <Route path='/logout' element={<Logout setUser={setUser} />} />
+            <Route path='/logout' element={<Logout setUser={setUser} setCart={setCart} />} />
             <Route path='/create_account' element={<CreateAccount setUser={setUser} />} />
 
             <Route path='/restaurants' element={
@@ -30,6 +31,9 @@ const AppRouter: React.FC<AppRouterProps> = ({ user, setUser, cart, setCart }) =
             } />
             <Route path='/restaurants/:id' element={
                 <RequireAuth isAuthorized={user !== null} children={<Restaurant cart={cart} setCart={setCart} />} />
+            } />
+            <Route path='/cart/' element={
+                <RequireAuth isAuthorized={user !== null} children={<Cart cart={cart} setCart={setCart} />} />
             } />
         </Routes>
     );

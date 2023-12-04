@@ -44,9 +44,10 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ user, cart }) => {
                                         Restaurants
                                         <Link to="/restaurants" />
                                     </Menu.Item>
-                                    <Menu.Item key="3" icon={<ShoppingCartOutlined />}>
+                                    <Menu.Item id='cart' key="3" icon={<ShoppingCartOutlined />}>
                                         <>
                                             Cart (<span id="cart-size">{cart?.items.length ? cart.items.length : 0}</span>)
+                                            <Link to="/cart" />
                                         </>
                                     </Menu.Item>
                                 </>

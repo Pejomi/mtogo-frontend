@@ -5,10 +5,12 @@ import React from "react";
 
 interface LogoutProps {
     setUser: (user: any) => void;
+    setCart: (cart: any) => void;
 }
 
-const Logout: React.FC<LogoutProps> = ({ setUser }) => {
+const Logout: React.FC<LogoutProps> = ({ setUser, setCart }) => {
     setUser(null);
+    setCart(null);
 
     return (
         <>

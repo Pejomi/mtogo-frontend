@@ -81,52 +81,52 @@ const CreateAccountForm: React.FC<CreateAccountFormProps> = ({ setUser }) => {
                         message: 'Please input your email!'
                     }]}
             >
-                <Input />
+                <Input id="email" />
             </Form.Item>
             <Form.Item
                 name="password"
                 label="Password"
                 rules={[{ required: true, message: 'Please input your password!' }]}
             >
-                <Input type="password" />
+                <Input id="password" type="password" />
             </Form.Item>
             <Form.Item
                 name="phone"
                 label="Phone"
                 rules={[{ required: true, message: 'Please input your phone number!' }]}
             >
-                <Input />
+                <Input id="phone" />
             </Form.Item>
             <Form.Item
                 name="street"
                 label="Street"
                 rules={[{ required: true, message: 'Please input your street!' }]}
             >
-                <Input />
+                <Input id="street" />
             </Form.Item>
             <Form.Item
                 name="city"
                 label="City"
                 rules={[{ required: true, message: 'Please input your city!' }]}
             >
-                <Input />
+                <Input id="city" />
             </Form.Item>
             <Form.Item
-                name="zipcode"
+                name="zipCode"
                 label="Zipcode"
                 rules={[{ required: true, message: 'Please input your zipcode!' }]}
             >
-                <Input />
+                <Input id="zipcode" />
             </Form.Item>
             <Form.Item
                 name="country"
                 label="Country"
                 rules={[{ required: true, message: 'Please input your country!' }]}
             >
-                <Input />
+                <Input id="country" />
             </Form.Item>
             <Form.Item style={{ float: "right" }}>
-                <Button type="primary" htmlType="submit" className="login-form-button">
+                <Button id="submit-create-account" type="primary" htmlType="submit" className="login-form-button">
                     Create
                 </Button>
             </Form.Item>

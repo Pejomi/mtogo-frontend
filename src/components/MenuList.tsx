@@ -22,7 +22,6 @@ const MenuList: React.FC<MenuListProps> = ({ data, cart, setCart }) => {
                         description={`Price: ${item.price} kr.`}
                     />
                     <Button
-                        name="add-to-cart-button"
                         type="primary"
                         style={{ background: "#00c936" }}
                         onClick={() => {

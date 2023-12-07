@@ -29,14 +29,18 @@ declare global {
     type MenuItem = {
         id: string,
         name: string,
-        restaurantId: string,
         price: number
+    }
+
+    type Menu = {
+        restaurantId: string,
+        items: MenuItem[]
     }
 
     type Restaurant = {
         id: string,
         name: string,
-        menus: MenuItem[]
+        city: string,
     }
 
     type Cart = {
@@ -63,5 +67,6 @@ export {
     UserRequest,
     AuthResponse,
     MenuItem,
-    Restaurant
+    Restaurant,
+    Menu
 }

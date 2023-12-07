@@ -16,20 +16,22 @@ const Restaurant: React.FC<RestaurantProps> = ({ cart, setCart }) => {
     const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
     const [menus, setMenus] = useState<Menu[] | []>([]);
 
-    async function fetchRestaurant(params: { id: string }) {
+    async function fetchRestaurant() {
         try {
-            const response = await axios.post(`http://localhost:8083/api/restaurant/${params.id}`);
+            const response = await axios.get(`http://localhost:8083/api/restaurant/${id}`);
             const data = response.data;
+            console.log(data);
             return data;
         } catch (error: any) {
             throw error;
         }
     }
 
-    async function fetchRestaurantMenus(params: { restaurantId: string }) {
+    async function fetchRestaurantMenus() {
         try {
-            const response = await axios.post(`http://localhost:8083/api/menu/restaurant/${params.restaurantId}`);
+            const response = await axios.get(`http://localhost:8084/api/menu/restaurant/${id}`);
             const data = response.data;
+            console.log(data);
             return data;
         } catch (error: any) {
             throw error;
@@ -38,7 +40,7 @@ const Restaurant: React.FC<RestaurantProps> = ({ cart, setCart }) => {
 
     useEffect(() => {
         if (id) {
-            fetchRestaurant({ id })
+            fetchRestaurant()
                 .then((data: any) => {
                     setRestaurant({
                         id: data.id,
@@ -46,12 +48,12 @@ const Restaurant: React.FC<RestaurantProps> = ({ cart, setCart }) => {
                         city: data.city,
                     });
 
-                    fetchRestaurantMenus({ restaurantId: data.id })
+                    fetchRestaurantMenus()
                         .then((menuData: any) => {
                             setMenus(
                                 menuData.map((menu: any) => ({
                                     id: menu.id,
-                                    items: menu.items.map((item: any) => ({
+                                    items: menu.menuItemsDto.map((item: any) => ({
                                         id: item.id,
                                         name: item.name,
                                         price: item.price,
@@ -75,8 +77,10 @@ const Restaurant: React.FC<RestaurantProps> = ({ cart, setCart }) => {
                         <Title style={{ textAlign: "center" }}><ShopOutlined /> {restaurant.name}</Title>
                         <Flex justify="center" align="flex-start">
                             <Col style={{ width: "100%", maxWidth: "900px" }}>
+                                {menus.length > 0 &&
                                 <MenuList data={menus[0].items} cart={cart} setCart={setCart} />
-                            </Col>
+                                }
+                                </Col>
                         </Flex>
                     </>
                 }

@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+# mtogo-frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+This project works as the frontend for the MTOGO-application project created by the group [Pejomi](). It is created to demonstrate frontend testing for the application. The related tests are located in the [mtogo-frontend-test]() project.
 
-## Available Scripts
+![Alt text](<src/assets/images/front-page.png>)
 
-In the project directory, you can run:
+For more information about the project see the [mtogo-microservices]() project.
 
-### `npm start`
+## Description
+The project is a simple React application that is used to create a simple order from restaurants. A person can login or register to the application and then browse the restaurants and their menus. The person can then add items to the shopping cart and place the order. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+All the data is fetched from the [mtogo-backend]() project.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Features
+The app is based on completing the following features:
 
-### `npm test`
+```gherkin
+Feature: Order Creation
+  As a consumer
+  I want to create an order
+  So that I can get food from a restaurant
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```gherkin
+Feature: Restaurant Menu Browsing
+  As a consumer,
+  I want to browse restaurant menus on MTOGO,
+  So that I can choose the food items I want to order.
+```
 
-### `npm run build`
+```gherkin
+Feature: Shopping Cart
+  As a customer,
+  I want to add and remove items from my shopping cart,
+  So that I can review and purchase my selected items.
+```
+For more information about the features and scenarios, see the [mtogo-frontend-test]() project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Technologies
+The project uses the following libraries:
+- [react](https://reactjs.org/)
+- [typescript](https://www.typescriptlang.org/)
+- [ant-design](https://ant.design/)
+- [react-router-dom](https://reactrouter.com/web/guides/quick-start)
+- [react-dom](https://reactjs.org/docs/react-dom.html)
+- [anxios](https://www.npmjs.com/package/axios)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Getting started
+The project is created using [create-react-app](https://create-react-app.dev/). To run the project locally, run the following commands:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+git clone https://github.com/Pejomi/mtogo-frontend.git
+cd mtogo-frontend
+npm install
+npm start
+```

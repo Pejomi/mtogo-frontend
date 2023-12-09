@@ -1,16 +1,16 @@
 # mtogo-frontend
 
 ## Introduction
-This project works as the frontend for the MTOGO-application project created by the group [Pejomi](). It is created to demonstrate frontend testing for the application. The related tests are located in the [mtogo-frontend-test]() project.
+This project works as the frontend for the MTOGO-application project created by the group [Pejomi](). It is created to demonstrate frontend testing for the application. The related tests are located in the [mtogo-frontend-test](https://github.com/Pejomi/mtogo-frontend-test.git) project.
 
 ![Alt text](<src/assets/images/front-page.png>)
 
-For more information about the project see the [mtogo-microservices]() project.
+For more information about the project see the [mtogo-microservices](https://github.com/Pejomi/mtogo-microservices.git) project.
 
 ## Description
 The project is a simple React application that is used to create a simple order from restaurants. A person can login or register to the application and then browse the restaurants and their menus. The person can then add items to the shopping cart and place the order. 
 
-All the data is fetched from the [mtogo-backend]() project.
+All the data is fetched from the [mtogo-microservices](https://github.com/Pejomi/mtogo-microservices.git) project.
 
 ### Features
 The app is based on completing the following features:
@@ -35,7 +35,7 @@ Feature: Shopping Cart
   I want to add and remove items from my shopping cart,
   So that I can review and purchase my selected items.
 ```
-For more information about the features and scenarios, see the [mtogo-frontend-test]() project.
+For more information about the features and scenarios, see the [mtogo-frontend-test](https://github.com/Pejomi/mtogo-frontend-test.git) project.
 
 ### Technologies
 The project uses the following libraries:

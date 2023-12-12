@@ -1,4 +1,5 @@
 # mtogo-frontend
+by Jonas, Peter & Mie
 
 ## Introduction
 This project works as the frontend for the MTOGO-application project created by the group [Pejomi](). It is created to demonstrate frontend testing for the application. The related tests are located in the [mtogo-frontend-test](https://github.com/Pejomi/mtogo-frontend-test.git) project.

@@ -17,7 +17,7 @@ const CartList: React.FC<CartListProps> = ({ cart, setCart }) => {
 
     async function fetchPlaceOrder(params: OrderRequest) {
         try {
-            const response = await axios.post("http://localhost:8080/api/orders", params);
+            const response = await axios.post("http://localhost:8080/api/order", params);
             const data = response.data;
             return data;
         } catch (error: any) {

@@ -31,7 +31,7 @@ const CartList: React.FC<CartListProps> = ({ cart, setCart }) => {
             restaurantId: "1",
             orderState: "created",
             price: 100,
-            orderItems: cart?.items
+            orderItemsDto: cart?.items
                 ? cart.items.map((item: MenuItem) => ({
                     menuItemId: item.id,
                     price: item.price,

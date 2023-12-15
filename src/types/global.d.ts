@@ -58,7 +58,7 @@ declare global {
         restaurantId: string,
         orderState: string,
         price: number,
-        orderItems: OrderItem[]
+        orderItemsDto: OrderItem[]
     }
 }
 

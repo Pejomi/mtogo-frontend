@@ -20,10 +20,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ setUser }) => {
     }
 
     const onFinish = (values: UserRequest) => {
-        console.log(values);
         fetchLogin(values)
             .then((data: AuthResponse) => {
-                console.log("Received data:", data);
                 setUser({ email: values.email, token: data.accessToken });
                 navigate("/");
             })

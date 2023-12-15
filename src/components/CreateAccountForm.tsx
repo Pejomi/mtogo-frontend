@@ -29,13 +29,10 @@ const CreateAccountForm: React.FC<CreateAccountFormProps> = ({ setUser }) => {
     }
 
     const onFinish = (values: RegisterRequest) => {
-        console.log(values);
         fetchRegistration(values)
             .then((data: string) => {
-                console.log("Received data:", data);
                 fetchLogin({ email: values.email, password: values.password })
                     .then((data: AuthResponse) => {
-                        console.log("Received data:", data);
                         setUser({ email: values.email, token: data.accessToken });
                         navigate("/");
                     })

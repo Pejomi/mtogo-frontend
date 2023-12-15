@@ -20,7 +20,6 @@ const Restaurant: React.FC<RestaurantProps> = ({ cart, setCart }) => {
         try {
             const response = await axios.get(`http://localhost:8083/api/restaurant/${id}`);
             const data = response.data;
-            console.log(data);
             return data;
         } catch (error: any) {
             throw error;
@@ -31,7 +30,6 @@ const Restaurant: React.FC<RestaurantProps> = ({ cart, setCart }) => {
         try {
             const response = await axios.get(`http://localhost:8084/api/menu/restaurant/${id}`);
             const data = response.data;
-            console.log(data);
             return data;
         } catch (error: any) {
             throw error;
@@ -78,9 +76,9 @@ const Restaurant: React.FC<RestaurantProps> = ({ cart, setCart }) => {
                         <Flex justify="center" align="flex-start">
                             <Col style={{ width: "100%", maxWidth: "900px" }}>
                                 {menus.length > 0 &&
-                                <MenuList data={menus[0].items} cart={cart} setCart={setCart} />
+                                    <MenuList data={menus[0].items} cart={cart} setCart={setCart} />
                                 }
-                                </Col>
+                            </Col>
                         </Flex>
                     </>
                 }
